@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequiredArgsConstructor
 public class MainController {
 
-	private final ATMMachineService atmMachineService;
+	//private final ATMMachineService atmMachineService;
 
-	@GetMapping("/")
-	public String getMainPage(@RequestParam(name = "number", required = false) String number, Model model) {
-		model.addAttribute("machines", atmMachineService.listATMMachine(number));
-		return "mainPage";
-	}
+//	@GetMapping("/")
+//	public String getMainPage(@RequestParam(name = "number", required = false) String number, Model model) {
+//		model.addAttribute("machines", atmMachineService.listATMMachine(number));
+//		return "mainPage";
+//	}
 
 }

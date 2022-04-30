@@ -9,4 +9,5 @@ public interface ATMMachineRepository extends JpaRepository<ATMMachine, Long> {
 	List<ATMMachine> findATMMachineByNumber(String number);
 
 	//List<ATMMachine> getAll();
+	List<ATMMachine> findATMMachineByClientId(Long id);
 }

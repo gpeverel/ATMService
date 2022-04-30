@@ -21,6 +21,7 @@ public class ATMMachineService {
 		return machineRepository.findAll();
 	}
 
+	//TODO добавить к банкомату клиента при сохранении
 	public void saveATMMachine(ATMMachine atmMachine) {
 		log.info("Saving new {}", atmMachine);
 		machineRepository.save(atmMachine);

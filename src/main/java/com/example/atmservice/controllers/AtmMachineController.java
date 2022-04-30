@@ -8,12 +8,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
 public class AtmMachineController {
+
 	private final ATMMachineService machineService;
 
+	@GetMapping("/")
+	public String getMainPage(@RequestParam(name = "number", required = false) String number, Model model) {
+		model.addAttribute("machines", machineService.listATMMachine(number));
+		return "mainPage";
+	}
 
 	@GetMapping("/machine/{id}")
 	public String machineInfo(@PathVariable Long id, Model model) {

@@ -18,6 +18,12 @@ public class ATMMachine {
 	private String number;
 	private String location;
 	private String model;
-	//private Long company_id;
+
+	/**
+	 * cascade - Как повлияет изменение сущности Банкомат на сущность Клиент (REFRESH - обновит его)
+	 * fetch - способ загрузки привязанных сущностей (EAGER - подгружаем все связанные с ней сущности)
+	 */
+	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+	private Client client;
 
 }
