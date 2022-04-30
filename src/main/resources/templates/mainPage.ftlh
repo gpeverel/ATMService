@@ -5,11 +5,18 @@
 </head>
 <body>
 <h2>ATM SERVICE</h2>
+<form action="/" method="get">
+    Поиск по номеру банкомата: <input type="text" name="number"><br>
+    <input type="submit" value="Поиск">
+</form>
+
 <h4>Ваши банкоматы</h4>
 <#list machines as machine>
     <div>
         <p><b>${machine.number}</b> ${machine.model} | <a href="/machine/${machine.id}">Подробнее</a></p>
     </div>
+    <#else>
+        <h3>Банкоматов нет</h3>
 </#list>
 <hr>
 <h3>Добавить банкомат</h3>
