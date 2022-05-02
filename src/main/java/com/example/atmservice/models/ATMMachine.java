@@ -24,6 +24,7 @@ public class ATMMachine {
 	 * fetch - способ загрузки привязанных сущностей (EAGER - подгружаем все связанные с ней сущности)
 	 */
 	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+	@JoinColumn
 	private Client client;
 
 }
