@@ -15,10 +15,10 @@
     <input type="submit" value="Выйти">
 </form>
 
-<form action="/" method="get">
-    Поиск по номеру банкомата: <input type="text" name="number"><br>
-    <input type="submit" value="Поиск">
-</form>
+<#--<form action="/client" method="get">-->
+<#--    Поиск по номеру банкомата: <input type="text" name="number"><br>-->
+<#--    <input type="submit" value="Поиск">-->
+<#--</form>-->
 
 <h4 class="" >Ваши банкоматы</h4>
 <#list machines as machine>

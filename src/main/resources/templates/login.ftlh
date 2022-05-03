@@ -12,6 +12,9 @@
         <input type="hidden" name="_csrf" value="${_csrf.token}">
         <input type="submit" value="Войти">
     </form>
+    <#if error == true>
+        Ваш аккаунт заблокирован или еще не подтвержден администратором<br>
+    </#if>
     <a href="/registration">Зарегистрироваться</a>
     <div>
         Если вы зарегистрировались, ожидайте подтверждения вашего аккаунта от администратора.<br>

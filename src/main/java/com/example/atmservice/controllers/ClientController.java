@@ -15,17 +15,17 @@ import java.security.Principal;
 
 @Controller
 @RequiredArgsConstructor
-public class AtmMachineController {
+public class ClientController {
 
 	private final ATMMachineService machineService;
 
-	@GetMapping("/")
-	public String getMainPage(@RequestParam(name = "number", required = false) String number,
+	@GetMapping("/client")
+	public String getMainClientPage(/*@RequestParam(name = "number", required = false) String number,*/
 	                          Principal principal, Model model) {
 		Client client = machineService.getClientByPrincipal(principal);
 		model.addAttribute("client", client);
 		model.addAttribute("machines", client.getMachines() /*machineService.listATMMachine(number)*/);
-		return "mainPage";
+		return "clientMainPage";
 	}
 
 	@GetMapping("/machine/{id}")
@@ -37,13 +37,13 @@ public class AtmMachineController {
 	@PostMapping("/machine/create")
 	public String createMachine(ATMMachine machine, Principal principal) {
 		machineService.saveATMMachine(principal, machine);
-		return "redirect:/";
+		return "redirect:/client";
 	}
 
 	@PostMapping("/machine/delete/{id}")
 	public String deleteMachine(@PathVariable Long id) {
 		machineService.deleteATMMachine(id);
-		return "redirect:/";
+		return "redirect:/client";
 	}
 
 }

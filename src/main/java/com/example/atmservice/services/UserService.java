@@ -9,6 +9,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.List;
+
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -22,8 +25,13 @@ public class UserService {
 		if (userRepository.findByLogin(login) != null) {
 			return false;
 		}
-		user.setActive(true);//TODO понять на каком этапе изменять на true
-		user.getRoles().add(role); //TODO роли тоже нужно где-то изменять
+		if (role == Role.ROLE_ADMIN) {
+			user.setActive(true);
+		}
+		else {
+			user.setActive(false);
+		}
+		user.getRoles().add(role);
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		userRepository.save(user);
 		log.info("Saving new user with login: {}", login);
@@ -33,4 +41,24 @@ public class UserService {
 	public User getUserByLogin(String login) {
 		return userRepository.findByLogin(login);
 	}
+
+	public User getUserByRole(Role role) {
+		return userRepository.findByRolesContains(role);
+	}
+
+	public void activateOrBanUser(Long id) {
+		User user = userRepository.findById(id).orElse(null);
+		if (user != null) {
+			if (user.isActive()) {
+				user.setActive(false);
+				log.info("BAN USER WITH LOGIN {}", user.getLogin());
+			}
+			else {
+				user.setActive(true);
+				log.info("USER ACTIVATED WITH LOGIN {}", user.getLogin());
+			}
+			userRepository.save(user);
+		}
+	}
+
 }

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @Slf4j
@@ -21,12 +22,25 @@ public class LoginController {
 	private final ClientService clientService;
 
 	@GetMapping("/login")
-	public String login() {
+	public String login(@RequestParam(value = "error", required = false) String error, Model model) {
+		if (error != null) {
+			model.addAttribute("error", true);
+		}
+		else {
+			model.addAttribute("error", false);
+		}
 		return "login";
 	}
 
 	@GetMapping("/registration")
-	public String registration() {
+	public String registration(Model model) {
+		User user = userService.getUserByRole(Role.ROLE_ADMIN);
+		if (user != null) {
+			model.addAttribute("thereIsAdmin", true);
+		}
+		else {
+			model.addAttribute("thereIsAdmin", false);
+		}
 		return "registration";
 	}
 
@@ -43,9 +57,21 @@ public class LoginController {
 		}
 		Client client = new Client(userService.getUserByLogin(user.getLogin()));
 		client.setTitle(title);
-		//log.info("CLIENT + USER {}", user);
-		//client.setUser();
 		clientService.saveClient(client);
+		return "redirect:/login";
+	}
+
+	@GetMapping("/registration/admin")
+	public String registrationAdmin() {
+		return "registrationAdmin";
+	}
+
+	@PostMapping("/registration/admin")
+	public String createAdmin(User user, Model model) {
+		log.info("NEW ADMIN {}", user);
+		if (!userService.createUser(user, Role.ROLE_ADMIN)) {
+			model.addAttribute("errorMessage", "Пользователь с таким логином уже существует!");
+		}
 		return "redirect:/login";
 	}
 

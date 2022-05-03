@@ -11,6 +11,11 @@
 <form action="/registration/client" method="get">
     <input type="submit" value="Зарегистрироваться как клиент">
 </form>
+<#if thereIsAdmin == false>
+    <form action="/registration/admin" method="get">
+        <input type="submit" value="Зарегистрироваться как администратор">
+    </form>
+</#if>
 <#-- добавить формы для других -->
 </body>
 </html>
