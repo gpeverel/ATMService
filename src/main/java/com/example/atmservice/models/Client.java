@@ -36,9 +36,9 @@ public class Client {
 		this.user = user;
 	}
 
-	public void addAtmMachineToClient(ATMMachine machine) {
-		machine.setClient(this);
-		machines.add(machine);
-	}
+//	public void addAtmMachineToClient(ATMMachine machine) {
+//		machine.setClient(this);
+//		machines.add(machine);
+//	}
 
 }

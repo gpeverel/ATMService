@@ -1,6 +1,7 @@
 package com.example.atmservice.controllers;
 
 import com.example.atmservice.models.ATMMachine;
+import com.example.atmservice.models.Client;
 import com.example.atmservice.services.ATMMachineService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
+
 @Controller
 @RequiredArgsConstructor
 public class AtmMachineController {
@@ -17,8 +20,11 @@ public class AtmMachineController {
 	private final ATMMachineService machineService;
 
 	@GetMapping("/")
-	public String getMainPage(@RequestParam(name = "number", required = false) String number, Model model) {
-		model.addAttribute("machines", machineService.listATMMachine(number));
+	public String getMainPage(@RequestParam(name = "number", required = false) String number,
+	                          Principal principal, Model model) {
+		Client client = machineService.getClientByPrincipal(principal);
+		model.addAttribute("client", client);
+		model.addAttribute("machines", client.getMachines() /*machineService.listATMMachine(number)*/);
 		return "mainPage";
 	}
 
@@ -29,8 +35,8 @@ public class AtmMachineController {
 	}
 
 	@PostMapping("/machine/create")
-	public String createMachine(ATMMachine machine) {
-		machineService.saveATMMachine(machine);
+	public String createMachine(ATMMachine machine, Principal principal) {
+		machineService.saveATMMachine(principal, machine);
 		return "redirect:/";
 	}
 

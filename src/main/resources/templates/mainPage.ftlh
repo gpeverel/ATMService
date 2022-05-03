@@ -7,6 +7,9 @@
 </head>
 <body>
 <h2>ATM SERVICE</h2>
+<#if client.title??>
+    <h4>Компания ${client.title}</h4>
+</#if>
 <form action="/logout" method="post">
     <input type="hidden" name="_csrf" value="${_csrf.token}">
     <input type="submit" value="Выйти">
@@ -31,6 +34,7 @@
     Номер: <input type="text" name="number"/><br><br>
     Модель: <input type="text" name="model"/><br><br>
     Местоположение: <input type="text" name="location"/><br><br>
+    <input type="hidden" name="_csrf" value="${_csrf.token}">
     <input type="submit" value="Добавить">
 </form>
 
