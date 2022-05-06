@@ -3,6 +3,7 @@ package com.example.atmservice.controllers;
 import com.example.atmservice.models.Client;
 import com.example.atmservice.models.User;
 import com.example.atmservice.models.Worker;
+import com.example.atmservice.models.enums.Qualification;
 import com.example.atmservice.models.enums.Role;
 import com.example.atmservice.services.ClientService;
 import com.example.atmservice.services.UserService;
@@ -14,6 +15,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Collections;
+import java.util.List;
 
 @Controller
 @Slf4j
@@ -66,7 +70,8 @@ public class LoginController {
 	}
 
 	@GetMapping("/registration/worker")
-	public String registrationWorker() {
+	public String registrationWorker(Model model) {
+		model.addAttribute("qualifications", List.of(Qualification.values()));
 		return "registrationWorker";
 	}
 

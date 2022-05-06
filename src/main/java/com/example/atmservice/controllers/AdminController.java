@@ -2,6 +2,7 @@ package com.example.atmservice.controllers;
 
 import com.example.atmservice.services.ClientService;
 import com.example.atmservice.services.UserService;
+import com.example.atmservice.services.WorkerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -16,10 +17,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class AdminController {
 	private final UserService userService;
 	private final ClientService clientService;
+	private final WorkerService workerService;
 
 	@GetMapping("/admin")
 	public String admin(Model model) {
 		model.addAttribute("clients", clientService.getClients());
+		model.addAttribute("workers", workerService.getWorkers());
 		return "admin";
 	}
 

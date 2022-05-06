@@ -20,7 +20,7 @@ public class WorkerService {
 	private final WorkerRepository workerRepository;
 	private final UserRepository userRepository;
 
-	public List<Worker> listWorkers() {
+	public List<Worker> getWorkers() {
 		return workerRepository.findAll();
 	}
 

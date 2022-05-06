@@ -9,7 +9,12 @@
 <form action="/registration/worker" method="post">
     Ваш ФИО: <input type="text" name="fullName"><br><br>
 <#--TODO Добавить сюда выбор квалификаций из всплывающего меню   -->
-    Квалификация: <input type="text" name="qualification"><br><br>
+    Квалификация:
+    <select name="qualification">
+        <#list qualifications as qualification>
+            <option value="${qualification}">${qualification}</option>
+        </#list>
+    </select><br><br>
     Логин: <input type="text" name="login"><br><br>
     Пароль: <input type="password" name="password"><br><br>
     <input type="hidden" name="_csrf" value="${_csrf.token}">

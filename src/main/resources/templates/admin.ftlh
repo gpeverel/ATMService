@@ -40,7 +40,35 @@
         <h3>Клиентов нет</h3>
     </#list>
 </table>
-<p>Таблица работников</p>
-
+<p>Таблица сотрудников</p>
+<table border="1">
+    <tr>
+        <th>Логин</th>
+        <th>ФИО</th>
+        <th>Квалификация</th>
+        <th>Активность</th>
+        <th>Активация</th>
+        <th>Подробная информация</th>
+    </tr>
+    <#list workers as worker>
+        <tr>
+            <th>${worker.user.login}</th>
+            <th>${worker.fullName}</th>
+            <th>${worker.qualification}</th>
+            <th><#if worker.user.active>true<#else>false</#if></th>
+            <th><form action="/admin/user/activate/${worker.id}" method="post">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}">
+                    <#if worker.user.active>
+                        <input type="submit" value="Забанить">
+                    <#else>
+                        <input type="submit" value="Активировать">
+                    </#if>
+                </form></th>
+            <th>Добавить ссылку</th>
+        </tr>
+    <#else>
+        <h3>Сотрудников нет</h3>
+    </#list>
+</table>
 </body>
 </html>
