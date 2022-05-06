@@ -32,6 +32,9 @@ public class MainController {
 		else if (user.getRoles().contains(Role.ROLE_ADMIN)) {
 			return "redirect:/admin";
 		}
+		else if (user.getRoles().contains(Role.ROLE_WORKER)) {
+			return "redirect:/worker";
+		}
 		return "redirect:/";
 	}
 

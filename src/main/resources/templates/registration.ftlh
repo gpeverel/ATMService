@@ -10,7 +10,10 @@
 
 <form action="/registration/client" method="get">
     <input type="submit" value="Зарегистрироваться как клиент">
-</form>
+</form><br>
+<form action="/registration/worker" method="get">
+    <input type="submit" value="Зарегистрироваться как сотрудник">
+</form><br>
 <#if thereIsAdmin == false>
     <form action="/registration/admin" method="get">
         <input type="submit" value="Зарегистрироваться как администратор">

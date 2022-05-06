@@ -14,8 +14,6 @@ public class CustomUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
-		//TODO добавить репозитории для всех типов пользователей
-		// и выбирать из всех репозиториев нужного
 		return userRepository.findByLogin(login);
 	}
 }
