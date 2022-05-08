@@ -15,9 +15,37 @@
 <div>
     <p>Ваше ФИО: ${worker.fullName}</p>
     <p>Ваша квалификация: ${worker.qualification}</p>
-    <h4>Список заявок подходящих под вашу квалификацию:</h4>
-    показать таблицу
 </div>
+<h4>Список свободных заявок подходящих под вашу квалификацию:</h4>
+<form action="/worker" method="get">
+
+    <input type="hidden" name="search" value=true>
+    <input type="submit" value="Искать актуальные заявки">
+</form><br>
+<#if freeApps??>
+    <#if freeApps?has_content>
+        <table border="1">
+            <tr>
+                <th>Тип</th>
+                <th>Описание</th>
+                <th>Дата появления</th>
+                <th>Подробная информация</th>
+            </tr>
+            <#list freeApps as app>
+                <tr>
+                    <th>${app.type}</th>
+                    <th>${app.description}</th>
+                    <th>${app.dateAppearance}</th>
+                    <th><a href="/application/${app.id}">Подробнее</a></th>
+                </tr>
+            </#list>
+        </table>
+    <#else>
+        <h3>Свободных заявок нет</h3>
+    </#if>
+</#if>
+
+<#--TODO Добавить заявки которые уже взял работник-->
 <hr>
 </body>
 </html>

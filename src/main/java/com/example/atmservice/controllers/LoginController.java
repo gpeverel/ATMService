@@ -76,7 +76,7 @@ public class LoginController {
 	}
 
 	@PostMapping("/registration/worker")
-	public String createWorker(User user, String fullName, String qualification, Model model) {
+	public String createWorker(User user, String fullName, Qualification qualification, Model model) {
 		log.info("NEW USER {}", user);
 		if (!userService.createUser(user, Role.ROLE_WORKER)) {
 			model.addAttribute("errorMessage", "Пользователь с таким логином уже существует!");

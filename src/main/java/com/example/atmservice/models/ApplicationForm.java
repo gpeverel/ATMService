@@ -1,6 +1,7 @@
 package com.example.atmservice.models;
 
 import com.example.atmservice.models.enums.ApplicationStatus;
+import com.example.atmservice.models.enums.Qualification;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,8 +30,10 @@ public class ApplicationForm {
 	/** Дата появления заявки */
 	private LocalDateTime dateAppearance;
 	/** Статус заявки может быть: Free, Busy, Done */
+	@Enumerated(EnumType.STRING)
 	private ApplicationStatus status;
-	private String qualification;
+	@Enumerated(EnumType.STRING)
+	private Qualification qualification;
 
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "workerId")

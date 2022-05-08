@@ -22,7 +22,7 @@ public class ApplicationController {
 	private final ApplicationService applicationService;
 
 	@PostMapping("/application/create")
-	public String createApplication(String description, String qualification,
+	public String createApplication(String description, Qualification qualification,
 	                                Long machineId) {
 		ATMMachine machine = atmMachineService.getAtmMachineById(machineId);
 		ApplicationForm application = new ApplicationForm(machine);

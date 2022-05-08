@@ -1,5 +1,6 @@
 package com.example.atmservice.models;
 
+import com.example.atmservice.models.enums.Qualification;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,8 @@ public class Worker {
 	@Id
 	private Long id;
 	private String fullName;
-	private String qualification;
+	@Enumerated(EnumType.STRING)
+	private Qualification qualification;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@MapsId // так как каждому работнику всегда соответствует свой юзер, сделаем чтобы внешний ключ был еще и первичным ключом
