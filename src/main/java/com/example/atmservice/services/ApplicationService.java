@@ -24,4 +24,8 @@ public class ApplicationService {
 		return appRepository.findApplicationFormsByMachine(machine);
 	}
 
+	public ApplicationForm getApplicationsById(Long id) {
+		return appRepository.findById(id).orElse(null);
+	}
+
 }

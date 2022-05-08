@@ -51,7 +51,7 @@
                 <th>${app.status}</th>
                 <th><#if app.worker??>${app.worker.fullName}<#else>Отсутствует</#if></th>
                 <th>${app.qualification}</th>
-                <th>Добавить ссылку</th>
+                <th><a href="/application/${app.id}">Подробнее</a></th>
             </tr>
         </#list>
     </table>
