@@ -17,5 +17,46 @@
     <input type="submit" value="Удалить">
 </form>
 
+<h3>Оставить заявку на обслуживание</h3>
+<form action="/application/create" method="post">
+    Описание заявки: <input type="text" name="description"><br><br>
+    Квалификация:
+    <select name="qualification">
+        <#list qualifications as qualification>
+            <option value="${qualification}">${qualification}</option>
+        </#list>
+    </select><br><br>
+    <input type="hidden" name="machineId" value="${machine.id}">
+    <input type="hidden" name="_csrf" value="${_csrf.token}">
+    <input type="submit" value="Подтвердить">
+</form>
+<h3>Заявки по данному банкомату</h3>
+<#if apps?has_content>
+    <table border="1">
+        <tr>
+            <th>Тип</th>
+            <th>Описание</th>
+            <th>Статус</th>
+            <th>Сотрудник</th>
+            <th>Квалификация</th>
+    <#--        <th>Дата появления</th>-->
+    <#--        <th>Дата взятия заявки сотрудником</th>-->
+    <#--        <th>Дата окончания работы</th>-->
+            <th>Подробная информация</th>
+        </tr>
+        <#list apps as app>
+            <tr>
+                <th>${app.type}</th>
+                <th>${app.description}</th>
+                <th>${app.status}</th>
+                <th><#if app.worker??>${app.worker.fullName}<#else>Отсутствует</#if></th>
+                <th>${app.qualification}</th>
+                <th>Добавить ссылку</th>
+            </tr>
+        </#list>
+    </table>
+<#else>
+    <h3>Заявок нет</h3>
+</#if>
 </body>
 </html>
