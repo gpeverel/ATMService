@@ -5,6 +5,9 @@
 </head>
 <body>
 <h2>ATM SERVICE</h2>
+<form action="/" method="get">
+    <input type="submit" value="Назад на главную">
+</form>
 <h4>Подробная информация о заявке</h4>
 <b>Тип: </b>${app.type}<br>
 <b>Описание: </b>${app.description}<br>

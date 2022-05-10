@@ -5,6 +5,9 @@
 </head>
 <body>
 <h2>ATM SERVICE</h2>
+<form action="/" method="get">
+    <input type="submit" value="Назад на главную">
+</form>
 <h4>Подробная информация о банкомате</h4>
 <b>Номер банкомата: </b>${machine.number}<br>
 <b>Модель банкомата: </b>${machine.model}<br>
