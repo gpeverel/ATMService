@@ -38,6 +38,10 @@ public class WorkerService {
 			return new Worker(); // чтобы сравнивать с null во freeMarker-e
 		}
 		User user = userRepository.findByLogin(principal.getName());
-		return workerRepository.findById(user.getId()).get();
+		return workerRepository.findById(user.getId()).orElse(new Worker());
+	}
+
+	public Worker getWorkerById(Long workerId) {
+		return workerRepository.findById(workerId).orElse(null);
 	}
 }

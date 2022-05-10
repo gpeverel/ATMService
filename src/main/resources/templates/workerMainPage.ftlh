@@ -44,8 +44,31 @@
         <h3>Свободных заявок нет</h3>
     </#if>
 </#if>
-
-<#--TODO Добавить заявки которые уже взял работник-->
+<h4>Список заявок, которые вы сейчас выполняете:</h4>
+<#if busyApps??>
+    <#if busyApps?has_content>
+        <table border="1">
+            <tr>
+                <th>Тип</th>
+                <th>Описание</th>
+                <th>Дата появления</th>
+                <th>Дата взятия</th>
+                <th>Подробная информация</th>
+            </tr>
+            <#list busyApps as app>
+                <tr>
+                    <th>${app.type}</th>
+                    <th>${app.description}</th>
+                    <th>${app.dateAppearance}</th>
+                    <th>${app.dateBegin}</th>
+                    <th><a href="/application/${app.id}">Подробнее</a></th>
+                </tr>
+            </#list>
+        </table>
+    <#else>
+        <h3>Заявок нет</h3>
+    </#if>
+</#if>
 <hr>
 </body>
 </html>

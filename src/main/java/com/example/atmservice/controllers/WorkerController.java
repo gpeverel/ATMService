@@ -27,7 +27,8 @@ public class WorkerController {
 			model.addAttribute("freeApps",
 					appService.getFreeApplicationsByQualification(worker.getQualification()));
 		}
-		//TODO сюда добавлять список заявок
+		model.addAttribute("busyApps",
+				appService.getBusyApplicationsOfWorker(worker));
 		return "workerMainPage";
 	}
 

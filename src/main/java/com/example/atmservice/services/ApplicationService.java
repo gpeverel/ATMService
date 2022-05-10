@@ -2,6 +2,7 @@ package com.example.atmservice.services;
 
 import com.example.atmservice.models.ATMMachine;
 import com.example.atmservice.models.ApplicationForm;
+import com.example.atmservice.models.Worker;
 import com.example.atmservice.models.enums.ApplicationStatus;
 import com.example.atmservice.models.enums.Qualification;
 import com.example.atmservice.repositories.ApplicationRepository;
@@ -34,4 +35,7 @@ public class ApplicationService {
 		return appRepository.findById(id).orElse(null);
 	}
 
+	public List<ApplicationForm> getBusyApplicationsOfWorker(Worker worker) {
+		return appRepository.findApplicationFormsByWorkerAndStatus(worker, ApplicationStatus.BUSY);
+	}
 }
