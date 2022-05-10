@@ -11,25 +11,27 @@
 <b>Местоположение: </b>${machine.location}<br>
 <b>Организация: </b>${machine.client.title}<br>
 <hr>
-<h3>Удалить банкомат</h3>
-<form action="/machine/delete/${machine.id}" method="post">
-    <input type="hidden" name="_csrf" value="${_csrf.token}">
-    <input type="submit" value="Удалить">
-</form>
+<#if machine.client.id == user.id>
+    <h3>Удалить банкомат</h3>
+    <form action="/machine/delete/${machine.id}" method="post">
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
+        <input type="submit" value="Удалить">
+    </form>
+    <h3>Оставить заявку на обслуживание</h3>
+    <form action="/application/create" method="post">
+        Описание заявки: <input type="text" name="description"><br><br>
+        Квалификация:
+        <select name="qualification">
+            <#list qualifications as qualification>
+                <option value="${qualification}">${qualification}</option>
+            </#list>
+        </select><br><br>
+        <input type="hidden" name="machineId" value="${machine.id}">
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
+        <input type="submit" value="Подтвердить">
+    </form>
+</#if>
 
-<h3>Оставить заявку на обслуживание</h3>
-<form action="/application/create" method="post">
-    Описание заявки: <input type="text" name="description"><br><br>
-    Квалификация:
-    <select name="qualification">
-        <#list qualifications as qualification>
-            <option value="${qualification}">${qualification}</option>
-        </#list>
-    </select><br><br>
-    <input type="hidden" name="machineId" value="${machine.id}">
-    <input type="hidden" name="_csrf" value="${_csrf.token}">
-    <input type="submit" value="Подтвердить">
-</form>
 <h3>Заявки по данному банкомату</h3>
 <#if apps?has_content>
     <table border="1">
@@ -39,9 +41,6 @@
             <th>Статус</th>
             <th>Сотрудник</th>
             <th>Квалификация</th>
-    <#--        <th>Дата появления</th>-->
-    <#--        <th>Дата взятия заявки сотрудником</th>-->
-    <#--        <th>Дата окончания работы</th>-->
             <th>Подробная информация</th>
         </tr>
         <#list apps as app>

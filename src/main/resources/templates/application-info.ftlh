@@ -28,12 +28,16 @@
             <h4>Заявка в работе у другого специалиста</h4>
         </#if>
     <#else>
-        <form action="/application/busy" method="post">
-            <input type="hidden" name="appId" value="${app.id}">
-            <input type="hidden" name="workerId" value="${worker.id}">
-            <input type="hidden" name="_csrf" value="${_csrf.token}">
-            <input type="submit" value="Взять заявку">
-        </form>
+        <#if app.qualification == worker.qualification>
+            <form action="/application/busy" method="post">
+                <input type="hidden" name="appId" value="${app.id}">
+                <input type="hidden" name="workerId" value="${worker.id}">
+                <input type="hidden" name="_csrf" value="${_csrf.token}">
+                <input type="submit" value="Взять заявку">
+            </form>
+        <#else>
+            <h4>Заявка не совпадает с вашей квалификацией</h4>
+        </#if>
     </#if>
 </#if>
 
