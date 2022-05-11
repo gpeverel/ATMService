@@ -45,7 +45,7 @@ public class ApplicationForm {
 
 	public ApplicationForm(ATMMachine machine) {
 		this.machine = machine;
-		status = ApplicationStatus.FREE;
+		status = ApplicationStatus.NOT_CONFIGURED;
 		dateAppearance = LocalDateTime.now();
 	}
 

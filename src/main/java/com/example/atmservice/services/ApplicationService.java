@@ -38,4 +38,8 @@ public class ApplicationService {
 	public List<ApplicationForm> getBusyApplicationsOfWorker(Worker worker) {
 		return appRepository.findApplicationFormsByWorkerAndStatus(worker, ApplicationStatus.BUSY);
 	}
+
+	public List<ApplicationForm> getApplicationsWithoutQualification() {
+		return appRepository.findApplicationFormsByQualificationIsNull();
+	}
 }

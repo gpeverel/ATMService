@@ -23,15 +23,9 @@
     <h3>Оставить заявку на обслуживание</h3>
     <form action="/application/create" method="post">
         Описание заявки: <input type="text" name="description"><br><br>
-        Квалификация:
-        <select name="qualification">
-            <#list qualifications as qualification>
-                <option value="${qualification}">${qualification}</option>
-            </#list>
-        </select><br><br>
         <input type="hidden" name="machineId" value="${machine.id}">
         <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <input type="submit" value="Подтвердить">
+        <input type="submit" value="Подтвердить обработку">
     </form>
 </#if>
 
@@ -52,7 +46,7 @@
                 <th>${app.description}</th>
                 <th>${app.status}</th>
                 <th><#if app.worker??>${app.worker.fullName}<#else>Отсутствует</#if></th>
-                <th>${app.qualification}</th>
+                <th><#if app.qualification??>${app.qualification}<#else>Отсутствует</#if></th>
                 <th><a href="/application/${app.id}">Подробнее</a></th>
             </tr>
         </#list>

@@ -41,7 +41,6 @@ public class ClientController {
 		ATMMachine machine = machineService.getAtmMachineById(id);
 		model.addAttribute("user", user);
 		model.addAttribute("machine", machine);
-		model.addAttribute("qualifications", List.of(Qualification.values()));
 		model.addAttribute("apps", appService.getApplicationsByMachine(machine));
 		return "machine-info";
 	}

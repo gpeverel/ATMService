@@ -70,5 +70,36 @@
         <h3>Сотрудников нет</h3>
     </#list>
 </table>
+<p>Таблица новый заявок. Требуется выбрать квалификацию для каждой.</p>
+<#if newApps?has_content>
+    <table border="1">
+        <tr>
+            <th>Описание</th>
+            <th>Дата появления</th>
+            <th>Квалификация</th>
+        </tr>
+        <#list newApps as app>
+            <tr>
+                <th>${app.description}</th>
+                <th>${app.dateAppearance}</th>
+                <th>
+                    <form action="/application/update/qualification" method="post">
+                        <select name="qualification">
+                            <#list qualifications as qualification>
+                                <option value="${qualification}">${qualification}</option>
+                            </#list>
+                        </select>
+                        <input type="hidden" name="appId" value="${app.id}">
+                        <input type="hidden" name="_csrf" value="${_csrf.token}">
+                        <input type="submit" value="Подтвердить обработку">
+                    </form>
+                </th>
+            </tr>
+        </#list>
+    </table>
+<#else>
+    <h3>Новых заявок нет</h3>
+</#if>
+
 </body>
 </html>

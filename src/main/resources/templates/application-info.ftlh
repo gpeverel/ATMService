@@ -13,7 +13,7 @@
 <b>Описание: </b>${app.description}<br>
 <b>Статус: </b>${app.status}<br>
 <b>Сотрудник: </b><#if app.worker??>${app.worker.fullName}<#else>Отсутствует</#if><br>
-<b>Квалификация: </b>${app.qualification}<br>
+<b>Квалификация: </b><#if app.qualification??>${app.qualification}<#else>Отсутствует</#if><br>
 <b>Дата появления:</b>${app.dateAppearance}<br>
 <b>Дата взятия заявки сотрудником:</b><#if app.dateBegin??>${app.dateBegin}<#else>Отсутствует</#if><br>
 <b>Дата окончания работы:</b><#if app.dateEnd??>${app.dateEnd}<#else>Отсутствует</#if><br>

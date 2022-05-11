@@ -16,4 +16,6 @@ public interface ApplicationRepository extends JpaRepository<ApplicationForm, Lo
 	List<ApplicationForm> findApplicationFormsByQualificationAndStatus(Qualification qualification, ApplicationStatus status);
 
 	List<ApplicationForm> findApplicationFormsByWorkerAndStatus(Worker worker, ApplicationStatus status);
+
+	List<ApplicationForm> findApplicationFormsByQualificationIsNull();
 }

@@ -28,12 +28,10 @@ public class ApplicationController {
 	private final WorkerService workerService;
 
 	@PostMapping("/application/create")
-	public String createApplication(String description, Qualification qualification,
-	                                Long machineId) {
+	public String createApplication(String description, Long machineId) {
 		ATMMachine machine = atmMachineService.getAtmMachineById(machineId);
 		ApplicationForm application = new ApplicationForm(machine);
 		application.setDescription(description);
-		application.setQualification(qualification);
 		application.setType("client");
 		applicationService.saveApplication(application);
 		return "redirect:/machine/" + machineId;
@@ -55,6 +53,15 @@ public class ApplicationController {
 		application.setWorker(worker);
 		application.setStatus(ApplicationStatus.BUSY);
 		application.setDateBegin(LocalDateTime.now());
+		applicationService.saveApplication(application);
+		return "redirect:/";
+	}
+
+	@PostMapping("/application/update/qualification")
+	public String updateQualificationByAdmin(Long appId, Qualification qualification) {
+		ApplicationForm application = applicationService.getApplicationsById(appId);
+		application.setStatus(ApplicationStatus.FREE);
+		application.setQualification(qualification);
 		applicationService.saveApplication(application);
 		return "redirect:/";
 	}
