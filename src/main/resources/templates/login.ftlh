@@ -7,6 +7,7 @@
     <title>ATM SERVICE</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/generalStyles.css"/>
     <link rel="stylesheet" type="text/css" href="/css/loginStyles.css"/>
 </head>
 <body>
@@ -111,7 +112,7 @@
                     </div>
                     <div class="email d-flex">
                         <div class="email_email">
-                            bankomat@lanit.ru
+                            atmservice@atm.ru
                         </div>
                         <div class="email_text">
                             Общие вопросы
