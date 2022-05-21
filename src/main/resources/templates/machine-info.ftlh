@@ -15,18 +15,22 @@
 <b>Организация: </b>${machine.client.title}<br>
 <hr>
 <#if machine.client.id == user.id>
-    <h3>Удалить банкомат</h3>
-    <form action="/machine/delete/${machine.id}" method="post">
-        <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <input type="submit" value="Удалить">
-    </form>
-    <h3>Оставить заявку на обслуживание</h3>
-    <form action="/application/create" method="post">
-        Описание заявки: <input type="text" name="description"><br><br>
-        <input type="hidden" name="machineId" value="${machine.id}">
-        <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <input type="submit" value="Подтвердить обработку">
-    </form>
+    <#if machine.visible == true>
+        <h3>Удалить банкомат</h3>
+        <form action="/machine/delete/${machine.id}" method="post">
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
+            <input type="submit" value="Удалить">
+        </form>
+        <h3>Оставить заявку на обслуживание</h3>
+        <form action="/application/create" method="post">
+            Описание заявки: <input type="text" name="description"><br><br>
+            <input type="hidden" name="machineId" value="${machine.id}">
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
+            <input type="submit" value="Подтвердить обработку">
+        </form>
+    <#else>
+        <h3>Банкомат больше не находится под обслуживанием</h3>
+    </#if>
 </#if>
 
 <h3>Заявки по данному банкомату</h3>

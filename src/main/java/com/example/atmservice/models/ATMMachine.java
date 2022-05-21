@@ -18,6 +18,7 @@ public class ATMMachine {
 	private String number;
 	private String location;
 	private String model;
+	private boolean visible;
 
 	/**
 	 * cascade - Как повлияет изменение сущности Банкомат на сущность Клиент (REFRESH - обновит его)

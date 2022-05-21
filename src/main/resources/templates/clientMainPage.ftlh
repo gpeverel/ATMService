@@ -28,6 +28,16 @@
 <#else>
     <h3>Банкоматов нет</h3>
 </#list>
+
+<h4>Удаленные банкоматы</h4>
+<#list deletedMachines as machine>
+    <div class="btm btm-primary">
+        <p><b>${machine.number}</b> ${machine.model} | <a href="/machine/${machine.id}">Подробнее</a></p>
+    </div>
+<#else>
+    <h3>Удаленных банкоматов нет</h3>
+</#list>
+
 <hr>
 <h3>Добавить банкомат</h3>
 <form action="/machine/create" method="post">

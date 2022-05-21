@@ -28,6 +28,18 @@ public class ATMMachineService {
 		return machineRepository.findAll();
 	}
 
+	public List<ATMMachine> getVisibleATMMachinesByClientId(Long clientId) {
+		return machineRepository.findATMMachineByClientIdAndVisibleIsTrue(clientId);
+	}
+
+	public List<ATMMachine> getVisibleATMMachines() {
+		return machineRepository.findATMMachinesByVisibleIsTrue();
+	}
+
+	public List<ATMMachine> getDeletedATMMachinesByClientId(Long clientId) {
+		return machineRepository.findATMMachineByClientIdAndVisibleIsFalse(clientId);
+	}
+
 	//TODO добавить к банкомату клиента при сохранении
 	public void saveATMMachine(Principal principal, ATMMachine atmMachine) {
 		atmMachine.setClient(getClientByPrincipal(principal));
@@ -44,7 +56,9 @@ public class ATMMachineService {
 	}
 
 	public void deleteATMMachine(Long id) {
-		machineRepository.deleteById(id);
+		ATMMachine machine = machineRepository.getById(id);
+		machine.setVisible(false);
+		machineRepository.save(machine);
 	}
 
 	public ATMMachine getAtmMachineById(Long id) {
