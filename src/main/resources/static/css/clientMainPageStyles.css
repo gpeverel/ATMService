@@ -1,0 +1,53 @@
+.logout_box{
+    margin-left: 300px;
+    min-width: 330px;
+    width: 100%;
+}
+
+.first_section{
+    height: 550px;
+}
+.atms,
+.deleted_atms{
+    max-height: 550px;
+    background-color: #e3e0e0;
+    padding-bottom: 50px;
+}
+
+.sections_title{
+    font-size: 30px;
+}
+
+.atms_adding{
+    width: 500px;
+}
+
+.table_box{
+    max-height: 400px;
+    border-radius: 10px 10px 0 0;
+}
+
+.table{
+    margin: 0;
+}
+
+.head_padding{
+    margin-right: 21px;
+}
+
+.body_box{
+    max-height: 345px;
+    overflow-y: scroll;
+}
+
+.table_body tbody{
+    border-radius: 10px;
+}
+
+.atms .fixed_header th,
+.atms .table_body td,
+.deleted_atms .fixed_header th,
+.deleted_atms .table_body td{
+    height: 50px;
+    width: 33.3%;
+}
