@@ -1,0 +1,73 @@
+.logout_box{
+    min-width: 330px;
+}
+
+.first_section,
+.workers_section,
+.application_section{
+    height: 550px;
+}
+
+.workers_section{
+    background-color: #2392d6;
+}
+
+.application_section{
+    background-color: #1880c0;
+}
+
+.sections_title{
+    font-size: 30px;
+}
+
+.table_box{
+    max-height: 400px;
+    border-radius: 10px 10px 0 0;
+}
+
+.table{
+    margin: 0;
+}
+
+.head_padding{
+    margin-right: 21px;
+}
+
+.body_box{
+    max-height: 345px;
+    overflow-y: scroll;
+}
+
+.table_body tbody{
+    border-radius: 10px;
+}
+
+.first_section .fixed_header th,
+.first_section .table_body td{
+    height: 50px;
+    width: 20%;
+}
+
+.workers_section .fixed_header th,
+.workers_section .table_body td{
+    height: 50px;
+    width: 16.7%;
+}
+
+.description{
+    width: 50%;
+    min-height: 50px;
+}
+
+.date{
+    width: 20%;
+    min-height: 50px;
+}
+.submit_form{
+    width: 30%;
+    min-height: 50px;
+}
+
+.form-select{
+    max-width: 100px;
+}
