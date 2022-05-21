@@ -25,7 +25,7 @@ public class RandomApplicationsCreator implements CommandLineRunner /*extends Th
 	private Qualification qualificationByDescription;
 	private final String[] descriptionArray = {
 			"Низкое количество купюр в банкомате.",
-			"Низкое количество бамаги для печати чека.",
+			"Низкое количество бумаги для печати чека.",
 			"Повреждена система сортировки купюр.",
 			"Восстановление сетевого (коммуникационного) соединения устройства.",
 			"Устранение замятий в трактах чекового и журнального принтеров.",
@@ -42,7 +42,7 @@ public class RandomApplicationsCreator implements CommandLineRunner /*extends Th
 		try {
 			while (true) {
 				Thread.sleep(60000);
-				List<ATMMachine> machineList = machineService.listATMMachine(null);
+				List<ATMMachine> machineList = machineService.getVisibleATMMachines();
 				if (machineList.size() == 0) {
 					System.out.println("Банкоматов нет!");
 					continue;

@@ -30,8 +30,11 @@ public class ClientController {
 	public String getMainClientPage(/*@RequestParam(name = "number", required = false) String number,*/
 	                          Principal principal, Model model) {
 		Client client = machineService.getClientByPrincipal(principal);
+		List<ATMMachine> visibleMachines = machineService.getVisibleATMMachinesByClientId(client.getId());
+		List<ATMMachine> deletedMachines = machineService.getDeletedATMMachinesByClientId(client.getId());
 		model.addAttribute("client", client);
-		model.addAttribute("machines", client.getMachines());
+		model.addAttribute("machines", visibleMachines);
+		model.addAttribute("deletedMachines", deletedMachines);
 		return "clientMainPage";
 	}
 
@@ -47,6 +50,7 @@ public class ClientController {
 
 	@PostMapping("/machine/create")
 	public String createMachine(ATMMachine machine, Principal principal) {
+		machine.setVisible(true);
 		machineService.saveATMMachine(principal, machine);
 		return "redirect:/client";
 	}
