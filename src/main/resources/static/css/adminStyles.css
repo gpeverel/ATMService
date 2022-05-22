@@ -2,44 +2,15 @@
     min-width: 330px;
 }
 
-.first_section,
-.workers_section,
-.application_section{
+.first_section{
     height: 550px;
 }
 
-.workers_section{
-    background-color: #2392d6;
-}
-
+.workers_section,
 .application_section{
-    background-color: #1880c0;
-}
-
-.sections_title{
-    font-size: 30px;
-}
-
-.table_box{
-    max-height: 400px;
-    border-radius: 10px 10px 0 0;
-}
-
-.table{
-    margin: 0;
-}
-
-.head_padding{
-    margin-right: 21px;
-}
-
-.body_box{
-    max-height: 345px;
-    overflow-y: scroll;
-}
-
-.table_body tbody{
-    border-radius: 10px;
+    background-color: #f1f1f1;
+    max-height: 550px;
+    padding-bottom: 50px;
 }
 
 .first_section .fixed_header th,

@@ -42,3 +42,33 @@
 .contacts_content_contacts{
     min-width: 160px;
 }
+
+.sections_title{
+    font-size: 30px;
+}
+
+.table_box{
+    max-height: 400px;
+    border-radius: 10px 10px 0 0;
+}
+
+.table{
+    margin: 0;
+}
+
+.head_padding{
+    margin-right: 21px;
+}
+
+.body_box{
+    max-height: 345px;
+    overflow-y: scroll;
+}
+
+.table_body tbody{
+    border-radius: 10px;
+}
+
+.exit_btn{
+    width: 100px;
+}

@@ -84,7 +84,7 @@
 
     <section class="workers_section">
         <div class="container">
-            <div class="pt-4 pb-3 text-white sections_title">
+            <div class="pt-4 pb-3 text-black sections_title">
                 Таблица сотрудников
             </div>
 
@@ -120,9 +120,9 @@
                                     <form action="/admin/user/activate/${worker.id}" method="post">
                                         <input type="hidden" name="_csrf" value="${_csrf.token}">
                                         <#if worker.user.active>
-                                            <input type="submit" value="Забанить">
+                                            <input class="btn btn-primary" type="submit" value="Забанить">
                                         <#else>
-                                            <input type="submit" value="Активировать">
+                                            <input class="btn btn-primary" type="submit" value="Активировать">
                                         </#if>
                                     </form>
                                 </td>
@@ -139,10 +139,10 @@
 
     <section class="application_section">
         <div class="container">
-            <div class="pt-4 pb-3 text-white sections_title">
+            <div class="pt-4 pb-3 text-black sections_title">
                 Таблица новых заявок
             </div>
-            <div class="pb-2 text-white">
+            <div class="pb-2 text-black">
                 Требуется выбрать квалификацию для каждой
             </div>
 

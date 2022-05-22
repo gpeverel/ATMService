@@ -21,11 +21,13 @@
                     <#if client.title??>
                         <div class="fs-5 fw-bold">Компания ${client.title}</div>
                     </#if>
+                    <div class="exit_btn">
+                        <form class="float-end pl-3 ml-2" action="/logout" method="post">
+                            <input type="hidden" name="_csrf" value="${_csrf.token}">
+                            <input class="btn btn-primary" type="submit" value="Выйти">
+                        </form>
+                    </div>
 
-                    <form class="pl-3" action="/logout" method="post">
-                        <input type="hidden" name="_csrf" value="${_csrf.token}">
-                        <input class="btn btn-primary" type="submit" value="Выйти">
-                    </form>
                 </div>
             </div>
         </div>
@@ -63,7 +65,7 @@
 
     <section class="atms">
         <div class="container">
-            <div class="pt-4 pb-3 text-white sections_title">
+            <div class="pt-4 pb-3 text-black sections_title">
                 Ваши банкоматы
             </div>
 
@@ -100,7 +102,7 @@
 
     <section class="deleted_atms">
         <div class="container">
-            <div class="pt-4 pb-3 text-white sections_title">
+            <div class="pt-4 pb-3 text-black sections_title">
                 Удаленные банкоматы
             </div>
 

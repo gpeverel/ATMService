@@ -1,0 +1,40 @@
+.worker_info{
+    font-size: 25px;
+}
+
+.first_section{
+    height: 170px;
+}
+
+.available_appls,
+.executing_appls{
+    max-height: 550px;
+    background-color: #f1f1f1;
+    padding-bottom: 50px;
+}
+
+th,
+td{
+    min-height: 50px;
+}
+
+.available_appls .type,
+.executing_appls .type,
+.executing_appls .more_info{
+    width: 10%;
+}
+
+.available_appls .description{
+    width: 50%;
+}
+
+.available_appls .appear_date,
+.available_appls .more_info,
+.executing_appls .appear_date,
+.executing_appls .take_date{
+    width: 20%;
+}
+
+.executing_appls .description{
+    width: 40%;
+}
