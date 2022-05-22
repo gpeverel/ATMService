@@ -26,7 +26,7 @@
         <div class="text-white">
             <div class="fs-2 text-center pt-2">Регистрация</div>
 
-            <form action="/registration/client" method="post">
+            <form class="reg" action="/registration/client" method="post">
                 <label class="form-label">Логин</label>
                 <input class="form-control" type="text" name="login"><br>
 

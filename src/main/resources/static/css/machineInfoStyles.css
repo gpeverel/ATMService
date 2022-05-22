@@ -1,0 +1,44 @@
+.first_section{
+    height: 215px;
+}
+
+.exit_btn{
+    width: 190px;
+}
+
+.desc_field{
+    width: 600px;
+    height: 250px;
+}
+
+.delete_atm{
+    background-color: #e5e3e3;
+    /*padding-bottom: 50px;*/
+}
+
+.atms_appls{
+    max-height: 550px;
+    background-color: #e8e8e8;
+    padding-bottom: 50px;
+}
+
+.atms_appls .type{
+    width: 10%;
+}
+
+
+.atms_appls .qualification,
+.atms_appls .status,
+.atms_appls .worker,
+.atms_appls .more_info{
+    width: 12.5%;
+}
+
+.atms_appls .description{
+    width: 40%;
+}
+
+th,
+td{
+    min-height: 50px;
+}
