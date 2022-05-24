@@ -58,10 +58,13 @@
     </section>
 
 
-    <!--<form action="/client" method="get">
-        Поиск по номеру банкомата: <input type="text" name="number"><br>
-        <input type="submit" value="Поиск">
-    </form>-->
+<#--<form action="/client" method="get">-->
+<#--    Поиск по номеру банкомата: <input type="text" name="number"><br>-->
+<#--    <input type="submit" value="Поиск">-->
+<#--</form>-->
+<form action="/pdf/generate" method="get">
+    <input type="submit" value="Получить отчет по заявкам">
+</form>
 
     <section class="atms">
         <div class="container">
