@@ -62,9 +62,11 @@
 <#--    Поиск по номеру банкомата: <input type="text" name="number"><br>-->
 <#--    <input type="submit" value="Поиск">-->
 <#--</form>-->
+<#--
 <form action="/pdf/generate" method="get">
     <input type="submit" value="Получить отчет по заявкам">
 </form>
+-->
 
     <section class="atms">
         <div class="container">
@@ -91,7 +93,7 @@
                                 <td>${machine.model}</td>
                                 <td><a href="/machine/${machine.id}">Подробнее</a></td>
                             </tr>
-                            <!--<div class="btm btm-primary">
+                            <#--<div class="btm btm-primary">
                                 <p><b>${machine.number}</b> ${machine.model} | <a href="/machine/${machine.id}">Подробнее</a></p>
                             </div>-->
                         <#else>
@@ -100,6 +102,10 @@
                     </table>
                 </div>
             </div>
+
+            <form class="pt-4" action="/pdf/generate" method="get">
+                <input class="btn btn-primary" type="submit" value="Получить отчет по заявкам">
+            </form>
         </div>
     </section>
 

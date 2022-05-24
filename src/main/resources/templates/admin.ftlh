@@ -71,7 +71,7 @@
                                         </#if>
                                     </form>
                                 </td>
-                                <td>Добавить ссылку</td>
+                                <td><a href="">подробнее</a> </td>
                             </tr>
                         <#else>
                             <h3 class="text-center">Клиентов нет</h3>
@@ -126,7 +126,7 @@
                                         </#if>
                                     </form>
                                 </td>
-                                <td>Добавить ссылку</td>
+                                <td><a href="">подробнее</a></td>
                             </tr>
                         <#else>
                             <h3 class="text-center">Сотрудников нет</h3>

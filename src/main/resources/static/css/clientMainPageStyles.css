@@ -1,9 +1,17 @@
 .first_section{
     height: 550px;
 }
+
+.atms{
+    max-height: 650px;
+}
+
+.deleted_atms {
+    max-height: 550px;
+}
+
 .atms,
 .deleted_atms{
-    max-height: 550px;
     background-color: #f1f1f1;
     padding-bottom: 50px;
 }
