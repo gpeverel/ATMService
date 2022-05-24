@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="1491.0" y="2269.5">com.example.atmservice.controllers.MainController</node>
+    <node x="846.5" y="1509.5">com.example.atmservice.cofigurations.SecurityConfig</node>
+    <node x="-18.0" y="2225.5">com.example.atmservice.controllers.ApplicationController</node>
+    <node x="-424.0" y="2236.5">com.example.atmservice.thread.RandomApplicationsCreator</node>
+    <node x="2005.5" y="2170.5">com.example.atmservice.controllers.LoginController</node>
+    <node x="1716.5" y="1476.5">com.example.atmservice.services.UserService</node>
+    <node x="-269.0" y="697.5">com.example.atmservice.models.Client</node>
+    <node x="1165.5" y="1465.5">com.example.atmservice.services.WorkerService</node>
+    <node x="1767.0" y="2247.5">com.example.atmservice.controllers.AdminController</node>
+    <node x="1983.0" y="1487.5">com.example.atmservice.services.ClientService</node>
+    <node x="-202.0" y="2580.5">com.example.atmservice.controllers.PDFGeneratorController</node>
+    <node x="1126.0" y="2280.5">com.example.atmservice.controllers.WorkerController</node>
+    <node x="809.5" y="2236.5">com.example.atmservice.controllers.ClientController</node>
+    <node x="375.5" y="1465.5">com.example.atmservice.services.ApplicationService</node>
+    <node x="-0.5" y="697.5">com.example.atmservice.models.Worker</node>
+    <node x="-415.5" y="1179.5">com.example.atmservice.models.ApplicationForm</node>
+    <node x="-34.0" y="18.5">com.example.atmservice.models.User</node>
+    <node x="-422.0" y="2603.0">com.example.atmservice.AtmServiceApplication</node>
+    <node x="-237.0" y="51.5">com.example.atmservice.models.ATMMachine</node>
+    <node x="-134.5" y="1421.5">com.example.atmservice.services.ATMMachineService</node>
+    <node x="361.0" y="2258.5">com.example.atmservice.services.PDFGeneratorService</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.example.atmservice.models.ApplicationForm" target="com.example.atmservice.models.ATMMachine" relationship="TO_ONE">
+      <point x="0.0" y="-390.5" />
+      <point x="-284.0" y="633.0" />
+      <point x="-204.0" y="633.0" />
+      <point x="-60.0" y="258.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.AdminController" target="com.example.atmservice.services.UserService" relationship="TO_ONE">
+      <point x="0.0" y="-82.5" />
+      <point x="1876.0" y="2010.0" />
+      <point x="1836.0" y="2010.0" />
+      <point x="0.0" y="93.5" />
+    </edge>
+    <edge source="com.example.atmservice.models.Worker" target="com.example.atmservice.models.User" relationship="TO_ONE">
+      <point x="0.0" y="-192.5" />
+      <point x="0.0" y="291.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.LoginController" target="com.example.atmservice.services.WorkerService" relationship="TO_ONE">
+      <point x="-80.0" y="-159.5" />
+      <point x="2096.0" y="1990.0" />
+      <point x="1296.0" y="1990.0" />
+      <point x="0.0" y="104.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.MainController" target="com.example.atmservice.services.ATMMachineService" relationship="TO_ONE">
+      <point x="0.0" y="-60.5" />
+      <point x="1616.0" y="2090.0" />
+      <point x="56.0" y="2090.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.LoginController" target="com.example.atmservice.models.Worker" relationship="CREATE">
+      <point x="80.0" y="-159.5" />
+      <point x="2256.0" y="1590.0" />
+      <point x="2276.0" y="1590.0" />
+      <point x="2276.0" y="1390.0" />
+      <point x="1296.0" y="1390.0" />
+      <point x="1296.0" y="1110.0" />
+      <point x="160.33333333333348" y="1110.0" />
+      <point x="44.33333333333337" y="192.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.LoginController" target="com.example.atmservice.services.ClientService" relationship="TO_ONE">
+      <point x="-80.0" y="-159.5" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.PDFGeneratorController" target="com.example.atmservice.services.ATMMachineService" relationship="TO_ONE">
+      <point x="0.0" y="-49.5" />
+      <point x="-44.0" y="1770.0" />
+      <point x="56.0" y="1770.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.AdminController" target="com.example.atmservice.services.WorkerService" relationship="TO_ONE">
+      <point x="0.0" y="-82.5" />
+      <point x="1876.0" y="2030.0" />
+      <point x="1296.0" y="2030.0" />
+      <point x="0.0" y="104.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.AdminController" target="com.example.atmservice.services.ClientService" relationship="TO_ONE">
+      <point x="0.0" y="-82.5" />
+      <point x="1876.0" y="1950.0" />
+      <point x="2096.0" y="1950.0" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.ClientController" target="com.example.atmservice.services.ATMMachineService" relationship="TO_ONE">
+      <point x="0.0" y="-93.5" />
+      <point x="956.0" y="2130.0" />
+      <point x="56.0" y="2130.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.ApplicationController" target="com.example.atmservice.services.ATMMachineService" relationship="TO_ONE">
+      <point x="80.0" y="-104.5" />
+      <point x="236.0" y="2150.0" />
+      <point x="56.0" y="2150.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.ApplicationController" target="com.example.atmservice.services.WorkerService" relationship="TO_ONE">
+      <point x="80.0" y="-104.5" />
+      <point x="236.0" y="1870.0" />
+      <point x="1296.0" y="1870.0" />
+      <point x="0.0" y="104.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.WorkerController" target="com.example.atmservice.services.WorkerService" relationship="TO_ONE">
+      <point x="0.0" y="-49.5" />
+      <point x="0.0" y="104.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.LoginController" target="com.example.atmservice.services.UserService" relationship="TO_ONE">
+      <point x="-80.0" y="-159.5" />
+      <point x="2096.0" y="1970.0" />
+      <point x="1836.0" y="1970.0" />
+      <point x="0.0" y="93.5" />
+    </edge>
+    <edge source="com.example.atmservice.services.ATMMachineService" target="com.example.atmservice.models.Client" relationship="CREATE">
+      <point x="0.0" y="-148.5" />
+      <point x="56.0" y="1110.0" />
+      <point x="-144.0" y="1110.0" />
+      <point x="0.0" y="192.5" />
+    </edge>
+    <edge source="com.example.atmservice.services.WorkerService" target="com.example.atmservice.models.Worker" relationship="CREATE">
+      <point x="0.0" y="-104.5" />
+      <point x="1296.0" y="1110.0" />
+      <point x="160.33333333333348" y="1110.0" />
+      <point x="44.33333333333337" y="192.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.LoginController" target="com.example.atmservice.models.Client" relationship="CREATE">
+      <point x="80.0" y="-159.5" />
+      <point x="2256.0" y="1590.0" />
+      <point x="2236.0" y="1590.0" />
+      <point x="2236.0" y="1410.0" />
+      <point x="56.0" y="1410.0" />
+      <point x="56.0" y="1110.0" />
+      <point x="-144.0" y="1110.0" />
+      <point x="0.0" y="192.5" />
+    </edge>
+    <edge source="com.example.atmservice.thread.RandomApplicationsCreator" target="com.example.atmservice.models.ApplicationForm" relationship="CREATE">
+      <point x="-80.0" y="-93.5" />
+      <point x="-324.0" y="2190.0" />
+      <point x="-284.0" y="2190.0" />
+      <point x="0.0" y="390.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.ClientController" target="com.example.atmservice.services.UserService" relationship="TO_ONE">
+      <point x="0.0" y="-93.5" />
+      <point x="956.0" y="1890.0" />
+      <point x="1836.0" y="1890.0" />
+      <point x="0.0" y="93.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.PDFGeneratorController" target="com.example.atmservice.services.PDFGeneratorService" relationship="TO_ONE">
+      <point x="0.0" y="-49.5" />
+      <point x="-44.0" y="2550.0" />
+      <point x="576.0" y="2550.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="com.example.atmservice.models.Client" target="com.example.atmservice.models.User" relationship="TO_ONE">
+      <point x="-60.0" y="-192.5" />
+      <point x="-204.0" y="659.0" />
+      <point x="116.0" y="659.0" />
+      <point x="0.0" y="291.5" />
+    </edge>
+    <edge source="com.example.atmservice.services.PDFGeneratorService" target="com.example.atmservice.services.ATMMachineService" relationship="TO_ONE">
+      <point x="0.0" y="-71.5" />
+      <point x="576.0" y="2210.0" />
+      <point x="196.0" y="2210.0" />
+      <point x="196.0" y="2170.0" />
+      <point x="56.0" y="2170.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.ApplicationController" target="com.example.atmservice.services.ApplicationService" relationship="TO_ONE">
+      <point x="80.0" y="-104.5" />
+      <point x="236.0" y="1850.0" />
+      <point x="596.0" y="1850.0" />
+      <point x="0.0" y="104.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.WorkerController" target="com.example.atmservice.services.ApplicationService" relationship="TO_ONE">
+      <point x="0.0" y="-49.5" />
+      <point x="1296.0" y="2070.0" />
+      <point x="596.0" y="2070.0" />
+      <point x="0.0" y="104.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.MainController" target="com.example.atmservice.services.ClientService" relationship="TO_ONE">
+      <point x="0.0" y="-60.5" />
+      <point x="1616.0" y="1930.0" />
+      <point x="2096.0" y="1930.0" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="com.example.atmservice.models.ApplicationForm" target="com.example.atmservice.models.Worker" relationship="TO_ONE">
+      <point x="0.0" y="-390.5" />
+      <point x="-284.0" y="1150.0" />
+      <point x="16.0" y="1150.0" />
+      <point x="-100.0" y="192.5" />
+    </edge>
+    <edge source="com.example.atmservice.models.ATMMachine" target="com.example.atmservice.models.Client" relationship="TO_ONE">
+      <point x="40.0" y="258.5" />
+      <point x="40.0" y="-192.5" />
+    </edge>
+    <edge source="com.example.atmservice.thread.RandomApplicationsCreator" target="com.example.atmservice.services.ATMMachineService" relationship="TO_ONE">
+      <point x="93.33333333333337" y="-93.5" />
+      <point x="-150.66666666666663" y="2210.0" />
+      <point x="-4.0" y="2210.0" />
+      <point x="-4.0" y="1790.0" />
+      <point x="56.0" y="1790.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="com.example.atmservice.models.Client" target="com.example.atmservice.models.ATMMachine" relationship="TO_MANY">
+      <point x="-60.0" y="-192.5" />
+      <point x="-60.0" y="258.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.ClientController" target="com.example.atmservice.services.ApplicationService" relationship="TO_ONE">
+      <point x="0.0" y="-93.5" />
+      <point x="956.0" y="2110.0" />
+      <point x="596.0" y="2110.0" />
+      <point x="0.0" y="104.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.MainController" target="com.example.atmservice.services.UserService" relationship="TO_ONE">
+      <point x="0.0" y="-60.5" />
+      <point x="1616.0" y="1910.0" />
+      <point x="1836.0" y="1910.0" />
+      <point x="0.0" y="93.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.ApplicationController" target="com.example.atmservice.models.ApplicationForm" relationship="CREATE">
+      <point x="-89.33333333333337" y="-104.5" />
+      <point x="66.66666666666663" y="2190.0" />
+      <point x="-284.0" y="2190.0" />
+      <point x="0.0" y="390.5" />
+    </edge>
+    <edge source="com.example.atmservice.services.PDFGeneratorService" target="com.example.atmservice.services.ApplicationService" relationship="TO_ONE">
+      <point x="0.0" y="-71.5" />
+      <point x="576.0" y="2210.0" />
+      <point x="196.0" y="2210.0" />
+      <point x="196.0" y="1830.0" />
+      <point x="596.0" y="1830.0" />
+      <point x="0.0" y="104.5" />
+    </edge>
+    <edge source="com.example.atmservice.thread.RandomApplicationsCreator" target="com.example.atmservice.services.ApplicationService" relationship="TO_ONE">
+      <point x="93.33333333333337" y="-93.5" />
+      <point x="-150.66666666666663" y="2210.0" />
+      <point x="-4.0" y="2210.0" />
+      <point x="-4.0" y="1810.0" />
+      <point x="596.0" y="1810.0" />
+      <point x="0.0" y="104.5" />
+    </edge>
+    <edge source="com.example.atmservice.controllers.AdminController" target="com.example.atmservice.services.ApplicationService" relationship="TO_ONE">
+      <point x="0.0" y="-82.5" />
+      <point x="1876.0" y="2050.0" />
+      <point x="596.0" y="2050.0" />
+      <point x="0.0" y="104.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.0" showDependencies="true" x="38.5" y="704.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
